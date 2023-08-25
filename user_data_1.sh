@@ -6,6 +6,7 @@ yum install git -y
 yum install jq -y
 systemctl enable docker
 systemctl start docker
+sudo usermod -a -G docker ec2-user
 
 #======================================================================================
 su - ec2-user -c "cd /home/ec2-user && \
