@@ -24,11 +24,11 @@ variable "ami_owner" {
 }
 
 variable "user_data" {
-  type = list(string)
+  type        = list(string)
   description = "User data for the ec2 instance"
 }
 
 variable "runner_name" {
-  type = list(string)
+  type        = list(string)
   description = "ec2 instance name"
 }

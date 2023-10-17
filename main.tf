@@ -39,5 +39,24 @@ resource "aws_autoscaling_group" "asg_runner" {
     value               = "Terraform"
     propagate_at_launch = true
   }
-
 }
+
+# resource "aws_autoscaling_schedule" "development-up" {
+#   scheduled_action_name  = "runner-instance-up"
+#   min_size               = 1
+#   max_size               = 3
+#   desired_capacity       = 1
+#   time_zone              = "Asia/Calcutta"
+#   recurrence             = "46 09 * * 1-5"
+#   autoscaling_group_name = aws_autoscaling_group.asg_runner.name
+# }
+
+# resource "aws_autoscaling_schedule" "development-down" {
+#   scheduled_action_name  = "runner-instance-down"
+#   min_size               = 0
+#   max_size               = 0
+#   desired_capacity       = 0
+#   time_zone              = "Asia/Calcutta"
+#   recurrence             = "42 09 * * 1-5"
+#   autoscaling_group_name = aws_autoscaling_group.asg_runner.name
+# }
